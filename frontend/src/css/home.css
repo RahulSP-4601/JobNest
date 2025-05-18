@@ -1,0 +1,81 @@
+.head {
+  text-align: center;
+  padding: 0 20px;
+  line-height: 1.1;
+  font-weight: 600;
+  color: #000000;
+}
+
+.head1 {
+  margin-top: 250px;
+}
+
+.size {
+  font-size: 90px;
+}
+
+.size1 {
+  font-size: 50px;
+}
+
+.dreamJob {
+  color: #7f46e5;
+  font-weight: 600;
+  font-size: 90px;
+  text-align: center;
+}
+
+.funnel-sans-font {
+  font-family: "Funnel Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.getStarted {
+  margin-top: 130px;
+  font-size: 80px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  text-align: center;
+}
+
+.getStarted:hover {
+  color: #4f46e5;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .head {
+    margin-top: 170px;
+    padding: 0 10px;
+  }
+
+  .size {
+    font-size: 50px; /* smaller font on mobile */
+  }
+
+  .dreamJob {
+    font-size: 50px; /* smaller font on mobile */
+  }
+
+  .getStarted {
+    margin-top: 90px;
+    font-size: 50px; /* scale down button text */
+  }
+}
+
+/* Optional smaller screens */
+@media (max-width: 480px) {
+  .size {
+    font-size: 24px;
+  }
+
+  .dreamJob {
+    font-size: 24px;
+  }
+
+  .getStarted {
+    font-size: 20px;
+  }
+}

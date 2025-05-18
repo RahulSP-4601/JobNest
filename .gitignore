@@ -1,0 +1,10 @@
+# Ignore the virtual environment folder anywhere
+.venv/
+
+# Ignore the .env file inside backend folder
+/backend/.env
+
+# Ignore node_modules folder inside frontend folder
+/frontend/node_modules/
+
+/frontend/.gitignore 

@@ -1,0 +1,53 @@
+/* Base styles (for desktop) */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  margin-top: 240px;
+  padding: 0 20px;
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  will-change: transform;
+}
+
+.carousel-logo {
+  height: 79px;
+  width: auto;
+  margin-right: 110px;
+  flex-shrink: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Tablet view */
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 50px;
+    margin-top: 130px;
+    padding: 0 16px;
+  }
+
+  .carousel-logo {
+    height: 45px;
+    margin-right: 40px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+  .carousel-container {
+    height: 40px;
+    margin-top: 40px;
+    padding: 0 12px;
+  }
+
+  .carousel-logo {
+    height: 35px;
+    margin-right: 24px;
+  }
+}

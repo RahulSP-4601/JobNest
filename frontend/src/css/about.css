@@ -1,0 +1,11 @@
+.funnel-sans-font {
+  font-family: "Funnel Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: x-large;
+}
+
+.head {
+  margin-top: -30px;
+}

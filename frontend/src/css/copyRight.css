@@ -1,0 +1,37 @@
+/* Make footer stick at the bottom */
+.copyright-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px 10px;
+  z-index: 1000; /* ensure it stays on top */
+  flex-shrink: 0;
+}
+
+/* Text inside the footer */
+.copyright-text {
+  margin: 0;
+  font-size: 28px; /* slightly smaller for footer */
+  color: #333;
+  padding: 5px 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .copyright-text {
+    font-size: 16px;
+    margin-top: 0;
+  }
+}
+
+.creator-link {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.creator-link:hover {
+  text-decoration: underline;
+}
