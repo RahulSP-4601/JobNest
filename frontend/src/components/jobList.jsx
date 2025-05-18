@@ -37,21 +37,21 @@ const JobList = () => {
   const now = new Date();
 
   const filteredJobs = jobs
-  .filter((job) => {
-    const lowerSearch = searchTerm.toLowerCase();
-    const matchesSearch =
-      job.title.toLowerCase().includes(lowerSearch) ||
-      job.company.toLowerCase().includes(lowerSearch);
+    .filter((job) => {
+      const lowerSearch = searchTerm.toLowerCase();
+      const matchesSearch =
+        job.title.toLowerCase().includes(lowerSearch) ||
+        job.company.toLowerCase().includes(lowerSearch);
 
-    const jobDate = new Date(job.publication_date);
-    const diffInDays = (now - jobDate) / (1000 * 60 * 60 * 24);
-    const matchesDate = !dateFilter || diffInDays <= parseInt(dateFilter);
-    const matchesExperience =
-      !experienceFilter || job.experience_level?.includes(experienceFilter);
+      const jobDate = new Date(job.publication_date);
+      const diffInDays = (now - jobDate) / (1000 * 60 * 60 * 24);
+      const matchesDate = !dateFilter || diffInDays <= parseInt(dateFilter);
+      const matchesExperience =
+        !experienceFilter || job.experience_level?.includes(experienceFilter);
 
-    return matchesSearch && matchesDate && matchesExperience;
-  })
-  .sort((a, b) => new Date(a.publication_date) - new Date(b.publication_date));
+      return matchesSearch && matchesDate && matchesExperience;
+    })
+    .sort((a, b) => new Date(a.publication_date) - new Date(b.publication_date));
 
   const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
   const indexOfLastJob = currentPage * jobsPerPage;
@@ -68,7 +68,9 @@ const JobList = () => {
   return (
     <div>
       <div className="filters-wrapper">
-        <select className="filter-dropdown" value={dateFilter} onChange={(e) => setDateFilter(e.target.value)}>
+        <div class="header-controls">
+
+        <select className="filters-wrapper filter-dropdown" value={dateFilter} onChange={(e) => setDateFilter(e.target.value)}>
           <option value="">All Dates</option>
           <option value="1">Last 1 Day</option>
           <option value="3">Last 3 Days</option>
@@ -77,16 +79,17 @@ const JobList = () => {
           <option value="30">Last 1 Month</option>
           <option value="60">Last 2 Month</option>
         </select>
-
+        
 
         <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
 
-        <select className="filter-dropdown" value={experienceFilter} onChange={(e) => setExperienceFilter(e.target.value)}>
+        <select className="filters-wrapper filter-dropdown" value={experienceFilter} onChange={(e) => setExperienceFilter(e.target.value)}>
           <option value="">All Experience</option>
           <option value="Entry Level">Entry Level</option>
           <option value="Mid Level">Mid Level</option>
           <option value="Senior Level">Senior Level</option>
         </select>
+        </div>
       </div>
 
       {loading && <p>Loading jobs...</p>}

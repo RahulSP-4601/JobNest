@@ -20,14 +20,14 @@
 }
 
 /* Left side: Logo or Title */
-.header {
+.h1 {
   margin: 0;
   font-size: 40px;
   cursor: pointer;
   transition: color 0.2s ease-in-out;
 }
 
-.header:hover {
+.h1:hover {
   color: #4f46e5;
 }
 

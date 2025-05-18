@@ -45,7 +45,6 @@ function App() {
             />
           </Routes>
         </div>
-        <CopyRight />
       </div>
       </div>
     </Router>

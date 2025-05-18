@@ -11,7 +11,7 @@ function Navbar() {
   
   return (
     <header className="Navbar">
-      <h1 className="header funnel-sans-navbar">
+      <h1 className="h1 funnel-sans-navbar">
         <Link to="/home" onClick={closeMenu}>JobNest</Link>
       </h1>
 
