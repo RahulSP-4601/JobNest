@@ -1,19 +1,16 @@
-/* Make footer stick at the bottom */
+/* Footer at the bottom using natural flow, no absolute positioning */
 .copyright-container {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
   text-align: center;
   padding: 20px 10px;
-  z-index: 1000; /* ensure it stays on top */
-  flex-shrink: 0;
+
+  margin-top: 100px;
 }
 
 /* Text inside the footer */
 .copyright-text {
   margin: 0;
-  font-size: 28px; /* slightly smaller for footer */
+  font-size: 28px;
   color: #333;
   padding: 5px 10px;
 }
@@ -26,6 +23,7 @@
   }
 }
 
+/* Creator link styles */
 .creator-link {
   color: #4f46e5;
   text-decoration: none;

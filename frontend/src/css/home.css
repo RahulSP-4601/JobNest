@@ -2,7 +2,6 @@
   text-align: center;
   padding: 0 20px;
   line-height: 1.1;
-  font-weight: 600;
   color: #000000;
 }
 
@@ -11,30 +10,31 @@
 }
 
 .size {
-  font-size: 90px;
+  font-size: 90px !important;
+  font-weight: 600 !important;
 }
 
 .size1 {
-  font-size: 50px;
+  font-size: 60px !important;
+  font-weight: 600 !important;
 }
 
 .dreamJob {
   color: #7f46e5;
-  font-weight: 600;
-  font-size: 90px;
+  font-weight: 600 !important;
+  font-size: 90px !important;
   text-align: center;
 }
 
 .funnel-sans-font {
   font-family: "Funnel Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
+  /* Removed font-weight here to avoid conflict */
   font-style: normal;
 }
 
 .getStarted {
-  margin-top: 130px;
-  font-size: 80px;
+  margin-top: 150px;
   cursor: pointer;
   transition: color 0.2s ease-in-out;
   text-align: center;
@@ -52,30 +52,33 @@
   }
 
   .size {
-    font-size: 50px; /* smaller font on mobile */
+    font-size: 50px !important; /* smaller font on mobile */
   }
 
   .dreamJob {
-    font-size: 50px; /* smaller font on mobile */
+    font-size: 50px !important; /* smaller font on mobile */
+  }
+
+  .size1 {
+    font-size: 50px !important;
   }
 
   .getStarted {
     margin-top: 90px;
-    font-size: 50px; /* scale down button text */
   }
 }
 
 /* Optional smaller screens */
 @media (max-width: 480px) {
   .size {
-    font-size: 24px;
+    font-size: 24px !important;
   }
 
   .dreamJob {
-    font-size: 24px;
+    font-size: 24px !important;
   }
 
-  .getStarted {
-    font-size: 20px;
+  .size1 {
+    font-size: 20px !important;
   }
 }

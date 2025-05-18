@@ -77,3 +77,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Example: in App.css or Layout.css */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}

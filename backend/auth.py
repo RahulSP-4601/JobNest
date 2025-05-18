@@ -10,7 +10,8 @@ import re
 app = Flask(__name__)
 
 # Allow CORS from your frontend origin(s)
-CORS(app, origins=["http://localhost:5173"], supports_credentials=True)
+CORS(app, origins=["http://localhost:5173", "http://127.0.0.1:5173"], supports_credentials=True)
+
 
 client = MongoClient(os.getenv("MONGO_URI", "mongodb://localhost:27017/"))
 db = client['jobportal']
@@ -50,15 +51,16 @@ def fetch_themuse_jobs(page=1):
 
 @app.route('/api/jobs', methods=['GET'])
 def get_jobs():
-    # Fetch first 5 pages concurrently to keep it performant
+    # Fetch first 20 pages concurrently
     all_jobs = []
-    with ThreadPoolExecutor(max_workers=5) as executor:
-        futures = [executor.submit(fetch_themuse_jobs, page) for page in range(1, 6)]
+    with ThreadPoolExecutor(max_workers=10) as executor:  # Optional: increase workers for performance
+        futures = [executor.submit(fetch_themuse_jobs, page) for page in range(1, 21)]
         for future in as_completed(futures):
             jobs = future.result()
             if jobs:
                 all_jobs.extend(jobs)
     return jsonify(all_jobs)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

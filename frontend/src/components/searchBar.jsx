@@ -1,10 +1,16 @@
 import React from 'react';
 import './../css/searchBar.css';
 
-const SearchBar = () => {
+const SearchBar = ({ searchTerm, onSearchChange }) => {
   return (
     <div className="search">
-      <input type="search" autoComplete="off" required />
+      <input
+        type="search"
+        autoComplete="off"
+        required
+        value={searchTerm}
+        onChange={(e) => onSearchChange(e.target.value)}
+      />
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 1000 150">
         <path
           className="path"
