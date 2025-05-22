@@ -61,6 +61,8 @@ gcloud run deploy jobportal-frontend \
 
 ## 🔗 5. Live Website
 
+[Click here to visit Job Nest 🌐](https://frontend-service-920994214041.us-central1.run.app/home)
+
 ## 📹 6. Video Output
 
 ## 🖼️ 7. Output Screenshot
