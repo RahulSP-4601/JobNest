@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './searchBar';
 import JobCard from './JobCard';
 import JobDetailsModal from './JobDetailsModal';
-import './../css/JobList.css';
+import '../css/jobList.css';
+
+// Resolve backend base URL from env (Docker or dev)
+const API_BASE =
+  import.meta.env.VITE_BACKEND_URL?.replace(/\/$/, '') || 'http://localhost:5001';
 
 const JobList = () => {
   const [jobs, setJobs] = useState([]);
@@ -18,7 +22,7 @@ const JobList = () => {
   useEffect(() => {
     async function fetchJobs() {
       try {
-        const response = await fetch('http://127.0.0.1:5000/api/jobs');
+        const response = await fetch(`${API_BASE}/api/jobs`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -68,27 +72,33 @@ const JobList = () => {
   return (
     <div>
       <div className="filters-wrapper">
-        <div class="header-controls">
+        <div className="header-controls">
+          <select
+            className="filters-wrapper filter-dropdown"
+            value={dateFilter}
+            onChange={(e) => setDateFilter(e.target.value)}
+          >
+            <option value="">All Dates</option>
+            <option value="1">Last 1 Day</option>
+            <option value="3">Last 3 Days</option>
+            <option value="7">Last 7 Days</option>
+            <option value="15">Last 15 Days</option>
+            <option value="30">Last 1 Month</option>
+            <option value="60">Last 2 Months</option>
+          </select>
 
-        <select className="filters-wrapper filter-dropdown" value={dateFilter} onChange={(e) => setDateFilter(e.target.value)}>
-          <option value="">All Dates</option>
-          <option value="1">Last 1 Day</option>
-          <option value="3">Last 3 Days</option>
-          <option value="7">Last 7 Days</option>
-          <option value="15">Last 15 Days</option>
-          <option value="30">Last 1 Month</option>
-          <option value="60">Last 2 Month</option>
-        </select>
-        
+          <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
 
-        <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-
-        <select className="filters-wrapper filter-dropdown" value={experienceFilter} onChange={(e) => setExperienceFilter(e.target.value)}>
-          <option value="">All Experience</option>
-          <option value="Entry Level">Entry Level</option>
-          <option value="Mid Level">Mid Level</option>
-          <option value="Senior Level">Senior Level</option>
-        </select>
+          <select
+            className="filters-wrapper filter-dropdown"
+            value={experienceFilter}
+            onChange={(e) => setExperienceFilter(e.target.value)}
+          >
+            <option value="">All Experience</option>
+            <option value="Entry Level">Entry Level</option>
+            <option value="Mid Level">Mid Level</option>
+            <option value="Senior Level">Senior Level</option>
+          </select>
         </div>
       </div>
 

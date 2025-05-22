@@ -1,0 +1,34 @@
+# Compose V2 no longer needs the "version" field — remove it to silence the warning.
+
+services:
+  backend:
+    build: ./backend
+    container_name: jobportal-backend
+    ports:
+      - "5001:5000" # host:container
+    environment:
+      FLASK_ENV: development
+    volumes:
+      - ./backend:/app
+    networks:
+      jobportal-net:
+        aliases:
+          - backend # guarantees the hostname “backend”
+
+  frontend:
+    build: ./frontend
+    container_name: jobportal-frontend
+    ports:
+      - "5173:80" # open http://localhost:5173
+    environment:
+      # What your React build (vite) uses at runtime.
+      # Because the browser runs on the host, point to the *host* port (5001).
+      VITE_BACKEND_URL: http://localhost:5001
+    depends_on:
+      - backend
+    networks:
+      - jobportal-net
+
+networks:
+  jobportal-net:
+    driver: bridge
