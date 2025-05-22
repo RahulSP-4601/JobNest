@@ -10,7 +10,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-CORS(app, origins=["http://localhost:5173"]) 
+CORS(app, origins=["https://jobportal-frontend-920994214041.us-central1.run.app"])
 
 client = MongoClient(os.getenv("MONGO_URI", "mongodb://localhost:27017/"))
 db = client["jobportal"]
@@ -55,5 +55,10 @@ def get_jobs():
             all_jobs.extend(f.result())
     return jsonify(all_jobs)
 
+
+
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+

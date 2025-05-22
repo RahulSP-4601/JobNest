@@ -5,8 +5,7 @@ import JobDetailsModal from './JobDetailsModal';
 import '../css/jobList.css';
 
 // Resolve backend base URL from env (Docker or dev)
-const API_BASE =
-  import.meta.env.VITE_BACKEND_URL?.replace(/\/$/, '') || 'http://localhost:5001';
+//const API_BASE = import.meta.env.VITE_BACKEND_URL;  // || 'http://localhost:5001';
 
 const JobList = () => {
   const [jobs, setJobs] = useState([]);
@@ -22,7 +21,7 @@ const JobList = () => {
   useEffect(() => {
     async function fetchJobs() {
       try {
-        const response = await fetch(`${API_BASE}/api/jobs`);
+        const response = await fetch("/api/jobs"); 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

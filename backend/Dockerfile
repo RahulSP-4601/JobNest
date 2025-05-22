@@ -17,4 +17,7 @@ COPY . .
 EXPOSE 5000
 
 # 6. Run the backend (adjust this based on your entry point)
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "auth:app"]
+CMD ["sh", "-c", "gunicorn -b 0.0.0.0:$PORT auth:app"]
+
+
+

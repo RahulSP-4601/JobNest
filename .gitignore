@@ -10,3 +10,4 @@
 /frontend/.gitignore 
 
 /frontend/.env
+/exec -l 
