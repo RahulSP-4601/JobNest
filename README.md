@@ -1,6 +1,6 @@
 # 🧠 Job Nest
 
-Job Nest is an end-to-end job portal web application designed to streamline job discovery and applications for users. Built with a modern tech stack, it supports real-time features and a seamless UI experience — deployed via Docker and hosted on Google Cloud Run.
+JobNest is a full-stack job portal web application designed to simplify job discovery and application processes. Built from scratch, the project showcases my skills in web scraping, API integration, Docker deployment, and Google Cloud hosting. The platform delivers a seamless user experience with powerful search and filtering features.
 
 ---
 
@@ -14,17 +14,55 @@ Job Nest is an end-to-end job portal web application designed to streamline job 
 
 ---
 
-## 🛠 2. Tech Stack
+## 🚀 2. Why I Built JobNest
+
+Initially, I attempted to scrape job data from LinkedIn, but due to authentication and anti-bot measures, I pivoted to using public APIs. I ultimately chose The Muse, which offers a free API and allows scraping of up to 40 job listings per request. I also explored platforms like RemoteOK, but rate limits constrained large-scale scraping. As a result, I capped fetches at 200–300 job listings spanning the last 24 hours to 2 months, gaining valuable experience in ethical scraping and rate-limit management.
+
+---
+
+## 🔑 3. Key Features
+
+- ✅ **Fetched and Scraped 200–300 Real-Time Job Listings**
+  - Fetched using **[The Muse API](https://www.themuse.com/developers/api/v2)**
+  - 50 jobs manually scraped for practice
+
+- 🔍 **Powerful Search Functionality**
+  - Search by **job title**, **company name**, and more
+
+- 🧰 **Advanced Filtering Options**
+  - **By Posting Date:**
+    - 🕐 Last 1 day  
+    - 🕒 Last 3 days  
+    - 🗓️ Last 7 days  
+    - 🗓️ Last 15 days  
+    - 📅 Last 1 month  
+    - 📅 Last 2 months  
+  - **By Experience Level:**
+    - 🟢 Entry Level  
+    - 🟡 Mid Level  
+    - 🔴 Senior Level  
+
+- 📝 **Detailed Job View Includes:**
+  - 💼 Job Title  
+  - 🏢 Company Name  
+  - 🎯 Experience Level  
+  - 📅 Date Posted  
+  - 📃 Job Description  
+  - 🔗 External Apply Link  
+
+---
+
+## 🛠 4. Tech Stack
 
 - **Frontend**: React, HTML, CSS, JavaScript
 - **Backend**: Python, Flask
-- **Server/Proxy**: NGINX
+- **API Gateway**: NGINX
 - **Containerization**: Docker, Docker Compose
 - **Cloud Platform**: Google Cloud Run
 
 ---
 
-## 📦 3. Deployed on Docker
+## 📦 5. Deployed on Docker
 
 - Built custom Docker image using `Dockerfile`
 - Used `docker-compose.yml` to expose the service on port `8080`
@@ -40,7 +78,7 @@ docker compose up --build
 docker compose down
 ```
 
-## ☁️ 4. Hosted on Google Cloud
+## ☁️ 6. Hosted on Google Cloud
 
 - Docker image built and submitted using:
 
@@ -59,15 +97,15 @@ gcloud run deploy jobportal-frontend \
   --port 8080
 ```
 
-## 🔗 5. Live Website
+## 🔗 7. Live Website
 
 [Click here to visit Job Nest 🌐](https://frontend-service-920994214041.us-central1.run.app/home)
 
-## 📹 6. Video Output
+## 📹 8. Video Output
 
 ▶️[Watch Demo Video](https://drive.google.com/file/d/1QA05V-v40LGbn5BKYv5njZbg0PptRW9H/view?usp=share_link)
 
-## 🖼️ 7. Output Screenshot
+## 🖼️ 9. Output Screenshot
 
 ![Home Page](Output/Home.png)
 ![Home Page](Output/Jobs.png)
