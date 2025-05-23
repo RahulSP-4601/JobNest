@@ -19,7 +19,7 @@ function About() {
 
       <div className='about-section'>
         <h2 className='section-title'><strong>Tech Stack</strong></h2>
-        <p>HTML • CSS • JavaScript • ReactJS • Python • Docker</p>
+        <p>HTML • CSS • JavaScript • ReactJS • Python • Docker • Google Cloud</p>
       </div>
 
       <div className='about-section'>

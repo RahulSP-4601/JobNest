@@ -66,3 +66,8 @@ gcloud run deploy jobportal-frontend \
 ## 📹 6. Video Output
 
 ## 🖼️ 7. Output Screenshot
+
+![Home Page](Output/Home.png)
+![Home Page](Output/Jobs.png)
+![Home Page](Output/Job_Search.png)
+![Home Page](Output/Job_Detail.png)
